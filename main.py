@@ -43,7 +43,6 @@ def back_to_main():
     time.sleep(2)
 
 def zbieractwo():
-    print('check zberactow')
 
     # IDZIESZ NA STRONE ZBIERACTWA
     driver.get('https://pl167.plemiona.pl/game.php?village=9182&screen=place&mode=scavenge')
@@ -70,9 +69,6 @@ def zbieractwo():
     
 
 def login_if_not_logged():
-    print('check if login')
-
-    driver.refresh()
 
     try:
         if driver.find_element_by_class_name('world_button_active'):
@@ -87,8 +83,8 @@ def close_tab():
 
 if __name__ == "__main__":
 
-    schedule.every(60).seconds.do(zbieractwo)
-    schedule.every(10).seconds.do(login_if_not_logged)
+    schedule.every(30).seconds.do(zbieractwo)
+    schedule.every(60).seconds.do(login_if_not_logged)
     
     login()
 
