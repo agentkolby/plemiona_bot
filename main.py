@@ -8,16 +8,14 @@ from selenium.webdriver.common.keys import Keys
 
 from utilities.get_cookies import get_cookies
 
+from tasks.scavenge import task_url
+
 load_dotenv()
 cookies = get_cookies()
 
 driver = webdriver.Chrome('drivers\windows_chromedriver')
 
-LOGIN = os.environ.get("LOGIN")
-PASSWORD = os.environ.get("PASSWORD")
-
 DOMAIN = 'https://www.plemiona.pl'
-
 
 driver.get(DOMAIN)
 
@@ -34,6 +32,9 @@ time.sleep(2)
 driver.find_element_by_class_name('world_button_active').click()
 
 time.sleep(2)
+
+print(task_url)
+
 
 driver.close()
 
